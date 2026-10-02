@@ -1,134 +1,228 @@
 
-/* CONFIGURACIÓN GENERAL */
+/* ==========================
+   ESTILOS GENERALES
+========================== */
+
+:root {
+    --verde: #173d35;
+    --verde-claro: #28594d;
+    --crema: #f8f7f2;
+    --blanco: #ffffff;
+    --naranja: #e49a3c;
+    --texto: #26332f;
+    --texto-suave: #66716c;
+}
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f7f2;
-  color: #1e302a;
-  line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--crema);
+    color: var(--texto);
+    line-height: 1.6;
 }
 
-/* CABECERA */
+/* ==========================
+   CABECERA Y MENÚ
+========================== */
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 8%;
-  background-color: #173d35;
-  color: white;
+.cabecera {
+    width: 100%;
+    min-height: 78px;
+    padding: 16px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background-color: var(--verde);
+    color: var(--blanco);
 }
 
 .logo {
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  text-decoration: none;
-  letter-spacing: 2px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-nav {
-  display: flex;
-  gap: 24px;
+.logo span {
+    color: var(--naranja);
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 
-nav a:hover {
-  color: #f5bd59;
+.navegacion a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
-/* SECCIONES */
-
-section {
-  padding: 90px 8%;
+.navegacion a:hover {
+    color: var(--naranja);
 }
 
-section h2 {
-  font-size: 36px;
-  margin-bottom: 16px;
+/* ==========================
+   PORTADA PRINCIPAL
+========================== */
+
+.portada {
+    min-height: 570px;
+    padding: 90px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(228, 154, 60, 0.22),
+            transparent 28%
+        ),
+        linear-gradient(120deg, #173d35, #28594d);
+    color: var(--blanco);
 }
 
-section p {
-  max-width: 700px;
-  margin-bottom: 16px;
+.portada-contenido {
+    max-width: 720px;
 }
 
-/* PORTADA */
-
-#inicio {
-  min-height: 520px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: #e9eee6;
+.etiqueta {
+    margin-bottom: 14px;
+    color: var(--naranja);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-#inicio h1 {
-  max-width: 750px;
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 1.1;
-  margin: 15px 0;
+.portada h1 {
+    max-width: 700px;
+    margin-bottom: 22px;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -2px;
 }
 
-#inicio > a {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 13px 24px;
-  background-color: #e49a3c;
-  color: #173d35;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
+.portada h1 span {
+    color: var(--naranja);
 }
 
-/* PIE DE PÁGINA */
-
-footer {
-  padding: 25px 8%;
-  background-color: #173d35;
-  color: white;
-  text-align: center;
+.portada-texto {
+    max-width: 580px;
+    margin-bottom: 32px;
+    color: #e7eee9;
+    font-size: 1.15rem;
 }
 
-/* DISEÑO PARA MÓVILES */
+/* ==========================
+   BOTONES
+========================== */
+
+.boton {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 2px solid var(--naranja);
+    border-radius: 8px;
+    background-color: var(--naranja);
+    color: #20352e;
+    text-decoration: none;
+    font-weight: 800;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    background-color: transparent;
+    color: var(--blanco);
+}
+
+/* ==========================
+   SECCIONES
+========================== */
+
+.seccion {
+    padding: 85px 10%;
+    text-align: center;
+}
+
+.seccion h2 {
+    margin-bottom: 20px;
+    color: var(--verde);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+.seccion > p:not(.etiqueta) {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--texto-suave);
+    font-size: 1.08rem;
+}
+
+.seccion-alternativa {
+    background-color: #eeeee5;
+}
+
+/* ==========================
+   PIE DE PÁGINA
+========================== */
+
+.pie {
+    padding: 25px 7%;
+    background-color: var(--verde);
+    color: #e7eee9;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ==========================
+   DISEÑO PARA MÓVILES
+========================== */
 
 @media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
+    .cabecera {
+        flex-direction: column;
+        padding: 18px 5%;
+    }
 
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
+    .navegacion {
+        justify-content: center;
+        gap: 12px 18px;
+    }
 
-  section {
-    padding: 60px 6%;
-  }
+    .navegacion a {
+        font-size: 0.88rem;
+    }
 
-  section h2 {
-    font-size: 28px;
-  }
+    .portada {
+        min-height: 480px;
+        padding: 70px 7%;
+    }
 
-  #inicio {
-    min-height: 430px;
-  }
+    .portada h1 {
+        letter-spacing: -1px;
+    }
+
+    .portada-texto {
+        font-size: 1rem;
+    }
+
+    .seccion {
+        padding: 65px 7%;
+    }
 }

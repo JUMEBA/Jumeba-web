@@ -2,65 +2,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JUMEBA, asociación cultural dedicada a los juegos de mesa, la socialización y la diversión compartida.">
-  <title>JUMEBA | Jugar es conectar</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JUMEBA es una asociación cultural de juegos de mesa. Compartimos partidas, experiencias y momentos para conectar personas.">
+    <title>JUMEBA | Jugar es conectar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <a href="#" class="logo">JUMEBA</a>
+    <header class="cabecera">
+        <a href="#inicio" class="logo">JUMEBA</a>
 
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Quiénes somos</a>
-      <a href="#actividades">Actividades</a>
-      <a href="#noticias">Noticias</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+        <nav class="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Quiénes somos</a>
+            <a href="#actividades">Actividades</a>
+            <a href="#noticias">Noticias</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="inicio">
-      <p>ASOCIACIÓN CULTURAL DE JUEGOS DE MESA</p>
-      <h1>Jugar es mucho más que ganar.</h1>
-      <p>
-        Compartimos partidas, hacemos nuevas amistades
-        y creamos experiencias alrededor de los juegos de mesa.
-      </p>
-      <a href="#nosotros">Descubre JUMEBA</a>
-    </section>
+    <main>
+        <section class="portada" id="inicio">
+            <div class="portada-contenido">
+                <p class="etiqueta">ASOCIACIÓN CULTURAL DE JUEGOS DE MESA</p>
 
-    <section id="nosotros">
-      <h2>Mucho más que juegos</h2>
-      <p>
-        En JUMEBA creemos que los juegos de mesa son una
-        oportunidad para conectar, aprender y disfrutar juntos.
-      </p>
-    </section>
+                <h1>Jugar es mucho más que <span>ganar.</span></h1>
 
-    <section id="actividades">
-      <h2>Nuestras actividades</h2>
-      <p>Muy pronto podrás descubrir nuestras próximas partidas y eventos.</p>
-    </section>
+                <p class="portada-texto">
+                    En JUMEBA creemos que cada partida es una oportunidad
+                    para conocer gente, compartir experiencias y crear
+                    grandes momentos.
+                </p>
 
-    <section id="noticias">
-      <h2>Noticias y novedades</h2>
-      <p>Descubre todo lo que ocurre en JUMEBA.</p>
-    </section>
+                <a href="#nosotros" class="boton">Descubre JUMEBA</a>
+            </div>
+        </section>
 
-    <section id="contacto">
-      <h2>Ven a conocernos</h2>
-      <p>¿Te gustan los juegos de mesa? ¡Nos encantará conocerte!</p>
-    </section>
-  </main>
+        <section class="seccion" id="nosotros">
+            <p class="etiqueta">SOBRE NOSOTROS</p>
+            <h2>Un espacio para compartir</h2>
+            <p>
+                JUMEBA es una asociación cultural que utiliza los juegos
+                de mesa como punto de encuentro. Queremos disfrutar,
+                aprender y crear una comunidad en la que todo el mundo
+                tenga un lugar en la mesa.
+            </p>
+        </section>
 
-  <footer>
-    <p>© 2026 JUMEBA. Todos los derechos reservados.</p>
-  </footer>
+        <section class="seccion seccion-alternativa" id="actividades">
+            <p class="etiqueta">VEN A JUGAR</p>
+            <h2>Mucho más que una partida</h2>
+            <p>
+                Organizamos encuentros y actividades para descubrir
+                juegos, conocer a otras personas y disfrutar juntos.
+                ¡Siempre hay sitio para una partida más!
+            </p>
+        </section>
 
-  <script src="script.js"></script>
+        <section class="seccion" id="noticias">
+            <p class="etiqueta">ACTUALIDAD</p>
+            <h2>¿Qué se mueve en JUMEBA?</h2>
+            <p>
+                Muy pronto encontrarás aquí nuestras novedades,
+                próximas actividades y noticias de la asociación.
+            </p>
+        </section>
+
+        <section class="seccion seccion-alternativa" id="contacto">
+            <p class="etiqueta">¡HABLEMOS!</p>
+            <h2>¿Te apetece conocernos?</h2>
+            <p>
+                Si te gustan los juegos de mesa y quieres formar parte
+                de nuestra comunidad, estaremos encantados de conocerte.
+            </p>
+            <a href="mailto:jumeba.badajoz@gmail.com" class="boton">Contactar</a>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>© 2021 JUMEBA · Jugar es conectar</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
