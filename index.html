@@ -117,77 +117,97 @@
 
 
 <!-- CALENDARIO DE ACTIVIDADES -->
-<section class="seccion calendario" id="calendario">
-    <p class="etiqueta">NO TE PIERDAS NADA</p>
-    <h2>Próximas partidas y eventos</h2>
+
+<section id="calendario" class="seccion calendario">
+    <p class="etiqueta">No te pierdas nuestras actividades</p>
+    <h2>Calendario JUMEBA</h2>
     <p class="calendario-intro">
-        ¡Reserva un hueco en tu agenda! Consulta las actividades
-        de JUMEBA y prepárate para disfrutar.
+        Quedadas, juegos y eventos para compartir nuestra
+        afición. ¡Siempre hay una partida esperándote!
     </p>
 
     <div class="eventos-lista">
 
+        <!-- QUEDADA SEMANAL -->
         <article class="evento">
             <div class="evento-fecha">
-                <span class="evento-dia">--</span>
-                <span class="evento-mes">FECHA</span>
+                <span class="evento-dia">CADA</span>
+                <span class="evento-mes">VIERNES</span>
             </div>
+
             <div class="evento-info">
-                <span class="evento-tipo">JUEGOS DE MESA</span>
-                <h3>Sesión de juegos</h3>
+                <span class="evento-tipo">Quedada semanal</span>
+                <h3>Tarde de juegos de mesa</h3>
                 <p>
-                    Una tarde para descubrir juegos, compartir mesa
-                    y disfrutar en buena compañía.
+                    Nuestra quedada habitual para jugar,
+                    conocer gente y disfrutar de los juegos
+                    de mesa en buena compañía.
                 </p>
-                <span class="evento-hora">🕒 Horario por confirmar</span>
+                <p class="evento-hora">
+                    <strong>Horario:</strong> Todos los viernes,
+                    de 18:00 a 22:00 h
+                </p>
+                <p class="evento-lugar">
+                    <strong>Lugar:</strong> AAVV de Cerro Gordo,
+                    Pl. Conde de la Torre del Fresno,
+                    06009 Badajoz
+                </p>
             </div>
+
             <div class="evento-accion">
-                <a href="#contacto" class="boton-evento">Consultar</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Pl.+Conde+de+la+Torre+del+Fresno%2C+06009+Badajoz"
+                   class="boton-evento"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Cómo llegar
+                </a>
             </div>
         </article>
 
-        <article class="evento">
+        <!-- EVENTO ESPECIAL -->
+        <article class="evento evento-especial">
             <div class="evento-fecha fecha-fucsia">
-                <span class="evento-dia">--</span>
-                <span class="evento-mes">FECHA</span>
+                <span class="evento-dia">09</span>
+                <span class="evento-mes">OCT 2026</span>
             </div>
-            <div class="evento-info">
-                <span class="evento-tipo">ENCUENTRO</span>
-                <h3>Jornada de comunidad</h3>
-                <p>
-                    Un encuentro para conocer a otros jugadores,
-                    compartir experiencias y hacer nuevas amistades.
-                </p>
-                <span class="evento-hora">🕒 Horario por confirmar</span>
-            </div>
-            <div class="evento-accion">
-                <a href="#contacto" class="boton-evento">Consultar</a>
-            </div>
-        </article>
 
-        <article class="evento">
-            <div class="evento-fecha fecha-morada">
-                <span class="evento-dia">--</span>
-                <span class="evento-mes">FECHA</span>
-            </div>
             <div class="evento-info">
-                <span class="evento-tipo">EVENTO ESPECIAL</span>
-                <h3>Jornada temática</h3>
+                <span class="evento-tipo">Evento especial</span>
+                <h3>Blood on the Clocktower</h3>
                 <p>
-                    Una actividad especial para vivir nuevas aventuras
-                    alrededor de los juegos de mesa.
+                    Mentir, debatir, descubrir y sobrevivir.
+                    Un pueblo, un asesino... ¿en quién confías?
+                    Ven a disfrutar de una partida llena de
+                    misterio, sospechas y diversión.
                 </p>
-                <span class="evento-hora">🕒 Horario por confirmar</span>
+                <p class="evento-hora">
+                    <strong>Horario:</strong> Viernes 9 de octubre,
+                    a las 18:00 h
+                </p>
+                <p class="evento-lugar">
+                    <strong>Lugar:</strong> Facultad de Ciencias
+                    de la Documentación y la Comunicación
+                </p>
             </div>
+
+            <img
+                src="img/cartel-blood-clocktower.jpg"
+                alt="Cartel del evento Blood on the Clocktower de JUMEBA, 9 de octubre de 2026"
+                class="evento-cartel"
+            />
+
             <div class="evento-accion">
-                <a href="#contacto" class="boton-evento">Consultar</a>
+                <a href="#contacto" class="boton-evento">
+                    Consultar
+                </a>
             </div>
         </article>
 
     </div>
 
     <p class="calendario-nota">
-        Las fechas y los horarios se anunciarán próximamente.
+        ¿Tienes alguna duda sobre las actividades?
+        <a href="#contacto">Contacta con JUMEBA.</a>
     </p>
 </section>
         
@@ -292,7 +312,10 @@
 
     <div class="contacto-contenido">
         <div class="contacto-tarjeta">
-            <div class="contacto-icono">✉️</div>
+            <div class="contacto-icono">
+    <img src="https://cdn.simpleicons.org/gmail/EA4335"
+         alt="Gmail">
+</div>
             <h3>Correo electrónico</h3>
             <p>Escríbenos si tienes alguna duda o quieres más información.</p>
             <a href="mailto:jumeba.badajoz@gmail.com"
@@ -302,7 +325,20 @@
         </div>
 
         <div class="contacto-tarjeta">
-            <div class="contacto-icono">📞</div>
+            <div class="contacto-icono">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+        19.79 19.79 0 0 1-8.63-3.07
+        19.5 19.5 0 0 1-6-6
+        A19.79 19.79 0 0 1 2.12 4.18
+        2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+        c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91
+        a16 16 0 0 0 6 6l1.27-1.27
+        a2 2 0 0 1 2.11-.45
+        c.9.34 1.84.58 2.8.7
+        A2 2 0 0 1 22 16.92z"/>
+    </svg>
+</div>
             <h3>Teléfono</h3>
             <p>También puedes contactar con nosotros por teléfono.</p>
             <a href="tel:+34637318171" class="boton-contacto">
@@ -311,7 +347,10 @@
         </div>
 
         <div class="contacto-tarjeta">
-            <div class="contacto-icono">📘</div>
+            <div class="contacto-icono">
+    <img src="https://cdn.simpleicons.org/facebook/0866FF"
+         alt="Facebook">
+</div>
             <h3>Facebook</h3>
             <p>Síguenos en Facebook para estar al día de la asociación.</p>
             <a href="https://www.facebook.com/profile.php?id=100075122376832"
@@ -323,7 +362,10 @@
         </div>
 
         <div class="contacto-tarjeta">
-            <div class="contacto-icono">📸</div>
+            <div class="contacto-icono">
+    <img src="https://cdn.simpleicons.org/instagram/E4405F"
+         alt="Instagram">
+</div>
             <h3>Instagram</h3>
             <p>Descubre nuestras actividades y comparte la afición.</p>
             <a href="https://www.instagram.com/jumeba_/"

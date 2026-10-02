@@ -831,10 +831,26 @@ body {
     width: 65px;
     height: 65px;
     margin: 0 auto 18px;
-    background: var(--azul-noche);
-    color: var(--cian);
-    border-radius: 50%;
-    font-size: 1.8rem;
+    background: #f1f3f8;
+    border: 1px solid #e3e6ef;
+    border-radius: 18px;
+}
+
+.contacto-icono img {
+    display: block;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.contacto-icono svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: var(--azul-noche);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .contacto-tarjeta h3 {
@@ -880,5 +896,58 @@ body {
 
     .contacto-tarjeta {
         padding: 28px 22px;
+    }
+}
+
+/* UBICACIÓN Y CARTEL DE LOS EVENTOS */
+
+.evento-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.evento-lugar {
+    margin-top: 6px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.evento-cartel {
+    display: block;
+    width: 125px;
+    max-height: 190px;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: var(--azul-noche);
+}
+
+.evento-especial {
+    border-color: rgba(255, 22, 143, 0.35);
+}
+
+.evento-especial:hover {
+    border-color: var(--fucsia);
+}
+
+.calendario-nota a {
+    color: var(--azul);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .evento-cartel {
+        width: 110px;
+        max-height: 165px;
+        margin-left: 83px;
+    }
+}
+
+@media (max-width: 480px) {
+    .evento-cartel {
+        width: 125px;
+        max-height: 185px;
+        margin: 0 auto;
     }
 }
