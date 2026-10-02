@@ -595,6 +595,7 @@ body {
    15. CALENDARIO DE ACTIVIDADES
 ========================================== */
 
+
 .calendario {
     background-color: #ffffff;
 }
@@ -604,24 +605,27 @@ body {
     margin: 0 auto 40px;
     color: var(--texto-suave);
     font-size: 1.08rem;
+    line-height: 1.7;
 }
 
 .eventos-lista {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    max-width: 950px;
+    gap: 22px;
+    max-width: 1000px;
     margin: 45px auto 0;
     text-align: left;
 }
 
+/* Tarjetas de eventos */
+
 .evento {
     display: flex;
     align-items: center;
-    gap: 25px;
-    padding: 22px;
+    gap: 24px;
+    padding: 25px;
     border: 1px solid #e7e8ef;
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: #ffffff;
     box-shadow: 0 6px 20px rgba(8, 13, 50, 0.05);
     transition:
@@ -631,7 +635,7 @@ body {
 }
 
 .evento:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: var(--cian);
     box-shadow: 0 12px 28px rgba(8, 13, 50, 0.1);
 }
@@ -644,11 +648,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 85px;
-    height: 90px;
+    width: 88px;
+    min-height: 92px;
     border-radius: 12px;
     background: linear-gradient(145deg, #00d9ff, #00a9ce);
     color: var(--azul-noche);
+    text-align: center;
 }
 
 .evento-dia {
@@ -658,7 +663,7 @@ body {
 }
 
 .evento-mes {
-    margin-top: 5px;
+    margin-top: 6px;
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -683,107 +688,236 @@ body {
 
 .evento-tipo {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     color: #d90b78;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .evento-info h3 {
-    margin-bottom: 6px;
+    margin-bottom: 9px;
     color: var(--azul-noche);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     line-height: 1.3;
 }
 
 .evento-info p {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     color: var(--texto-suave);
     font-size: 0.92rem;
+    line-height: 1.6;
 }
 
-.evento-hora {
+.evento-info p:last-child {
+    margin-bottom: 0;
+}
+
+.evento-hora,
+.evento-lugar {
     color: #555d76;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
 }
 
-/* Botón del evento */
+/* Cartel del evento */
+
+.enlace-cartel {
+    display: block;
+    flex: 0 0 125px;
+    max-width: 125px;
+    border-radius: 9px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.evento-cartel {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.enlace-cartel:hover .evento-cartel {
+    transform: scale(1.04);
+}
+
+/* Botones */
 
 .evento-accion {
+    display: flex;
     flex-shrink: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
 }
 
 .boton-evento {
-    display: inline-block;
-    padding: 10px 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 17px;
     border: 1px solid var(--cian);
     border-radius: 8px;
     background-color: var(--azul-noche);
     color: #ffffff;
     text-decoration: none;
+    text-align: center;
     font-size: 0.85rem;
     font-weight: 700;
     transition:
         background-color 0.2s ease,
         color 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .boton-evento:hover {
     background-color: var(--cian);
     border-color: var(--cian);
     color: var(--azul-noche);
+    transform: translateY(-2px);
 }
 
+.boton-whatsapp {
+    background-color: #168b50;
+    border-color: #168b50;
+    color: #ffffff;
+}
+
+.boton-whatsapp:hover {
+    background-color: #0f6f3e;
+    border-color: #0f6f3e;
+    color: #ffffff;
+}
+
+/* Nota inferior */
+
 .calendario-nota {
-    margin-top: 28px;
+    margin-top: 30px;
     color: var(--texto-suave);
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-style: italic;
     text-align: center;
 }
 
-/* Adaptación a móviles */
+.calendario-nota a {
+    color: var(--azul-noche);
+    font-weight: 700;
+    text-decoration-color: var(--cian);
+    text-underline-offset: 3px;
+}
 
-@media (max-width: 700px) {
+.calendario-nota a:hover {
+    color: #d90b78;
+}
+
+/* Adaptación a tabletas y móviles */
+
+@media (max-width: 800px) {
     .evento {
-        align-items: flex-start;
         flex-wrap: wrap;
-        gap: 15px;
-        padding: 17px;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
     }
 
     .evento-fecha {
-        width: 68px;
-        height: 72px;
+        width: 72px;
+        min-height: 76px;
     }
 
     .evento-dia {
-        font-size: 1.65rem;
+        font-size: 1.7rem;
     }
 
     .evento-info {
+        flex: 1 1 calc(100% - 95px);
+    }
+
+    .enlace-cartel {
+        flex: 0 0 115px;
+        max-width: 115px;
+        margin-left: 88px;
+    }
+
+    .evento-accion {
         flex: 1;
-        width: calc(100% - 85px);
-    }
-
-    .evento-accion {
-        width: 100%;
-        padding-left: 83px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
+    .eventos-lista {
+        margin-top: 30px;
+        gap: 16px;
+    }
+
     .evento {
-        gap: 12px;
+        gap: 13px;
+        padding: 16px;
+        border-radius: 13px;
+    }
+
+    .evento-fecha {
+        width: 62px;
+        min-height: 68px;
+    }
+
+    .evento-dia {
+        font-size: 1.5rem;
+    }
+
+    .evento-mes {
+        font-size: 0.62rem;
+    }
+
+    .evento-info {
+        flex: 1 1 calc(100% - 75px);
+    }
+
+    .evento-info h3 {
+        font-size: 1.08rem;
+    }
+
+    .evento-info p {
+        font-size: 0.87rem;
+    }
+
+    .enlace-cartel {
+        flex: 0 0 110px;
+        max-width: 110px;
+        margin-left: 0;
     }
 
     .evento-accion {
-        padding-left: 0;
+        flex: 1 1 100%;
+        justify-content: flex-start;
+    }
+
+    .boton-evento {
+        padding: 10px 13px;
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .evento,
+    .boton-evento,
+    .evento-cartel {
+        transition: none;
+    }
+
+    .evento:hover,
+    .boton-evento:hover,
+    .enlace-cartel:hover .evento-cartel {
+        transform: none;
+    }
+}
 
 /* CONTACTO */
 
