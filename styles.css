@@ -1,16 +1,24 @@
 
-/* ==========================
-   ESTILOS GENERALES
-========================== */
+/* ==========================================
+   JUMEBA - HOJA DE ESTILOS PRINCIPAL
+   Identidad visual: azul noche, cian y fucsia
+========================================== */
+
+
+/* ==========================================
+   1. COLORES Y CONFIGURACIÓN GENERAL
+========================================== */
 
 :root {
-    --verde: #173d35;
-    --verde-claro: #28594d;
-    --crema: #f8f7f2;
+    --azul-noche: #080d32;
+    --azul: #111b50;
+    --azul-medio: #173d75;
+    --cian: #00d9ff;
+    --fucsia: #ff168f;
+    --crema: #f5f2e8;
     --blanco: #ffffff;
-    --naranja: #e49a3c;
-    --texto: #26332f;
-    --texto-suave: #66716c;
+    --texto: #20243b;
+    --texto-suave: #62677b;
 }
 
 * {
@@ -30,9 +38,10 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================
-   CABECERA Y MENÚ
-========================== */
+
+/* ==========================================
+   2. CABECERA Y MENÚ DE NAVEGACIÓN
+========================================== */
 
 .cabecera {
     width: 100%;
@@ -42,8 +51,9 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    background-color: var(--verde);
+    background-color: var(--azul-noche);
     color: var(--blanco);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.25);
 }
 
 .logo {
@@ -55,12 +65,13 @@ body {
 }
 
 .logo span {
-    color: var(--naranja);
+    color: var(--fucsia);
 }
 
 .navegacion {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 28px;
     flex-wrap: wrap;
 }
@@ -73,25 +84,33 @@ body {
 }
 
 .navegacion a:hover {
-    color: var(--naranja);
+    color: var(--cian);
 }
 
-/* ==========================
-   PORTADA PRINCIPAL
-========================== */
+
+/* ==========================================
+   3. PORTADA PRINCIPAL
+========================================== */
 
 .portada {
     min-height: 570px;
     padding: 90px 7%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 40px;
     background:
         radial-gradient(
-            circle at 85% 25%,
-            rgba(228, 154, 60, 0.22),
-            transparent 28%
+            circle at 80% 45%,
+            rgba(0, 217, 255, 0.22),
+            transparent 30%
         ),
-        linear-gradient(120deg, #173d35, #28594d);
+        radial-gradient(
+            circle at 15% 90%,
+            rgba(255, 22, 143, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(120deg, var(--azul-noche), var(--azul));
     color: var(--blanco);
 }
 
@@ -101,7 +120,7 @@ body {
 
 .etiqueta {
     margin-bottom: 14px;
-    color: var(--naranja);
+    color: var(--cian);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 2px;
@@ -116,158 +135,17 @@ body {
 }
 
 .portada h1 span {
-    color: var(--naranja);
+    color: var(--fucsia);
 }
 
 .portada-texto {
     max-width: 580px;
     margin-bottom: 32px;
-    color: #e7eee9;
+    color: #e7eaf5;
     font-size: 1.15rem;
 }
 
-/* ==========================
-   BOTONES
-========================== */
-
-.boton {
-    display: inline-block;
-    padding: 13px 25px;
-    border: 2px solid var(--naranja);
-    border-radius: 8px;
-    background-color: var(--naranja);
-    color: #20352e;
-    text-decoration: none;
-    font-weight: 800;
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.boton:hover {
-    transform: translateY(-3px);
-    background-color: transparent;
-    color: var(--blanco);
-}
-
-/* ==========================
-   SECCIONES
-========================== */
-
-.seccion {
-    padding: 85px 10%;
-    text-align: center;
-}
-
-.seccion h2 {
-    margin-bottom: 20px;
-    color: var(--verde);
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.2;
-}
-
-.seccion > p:not(.etiqueta) {
-    max-width: 760px;
-    margin: 0 auto;
-    color: var(--texto-suave);
-    font-size: 1.08rem;
-}
-
-.seccion-alternativa {
-    background-color: #eeeee5;
-}
-
-/* ==========================
-   PIE DE PÁGINA
-========================== */
-
-.pie {
-    padding: 25px 7%;
-    background-color: var(--verde);
-    color: #e7eee9;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-/* ==========================
-   DISEÑO PARA MÓVILES
-========================== */
-
-@media (max-width: 700px) {
-    .cabecera {
-        flex-direction: column;
-        padding: 18px 5%;
-    }
-
-    .navegacion {
-        justify-content: center;
-        gap: 12px 18px;
-    }
-
-    .navegacion a {
-        font-size: 0.88rem;
-    }
-
-    .portada {
-        min-height: 480px;
-        padding: 70px 7%;
-    }
-
-    .portada h1 {
-        letter-spacing: -1px;
-    }
-
-    .portada-texto {
-        font-size: 1rem;
-    }
-
-    .seccion {
-        padding: 65px 7%;
-    }
-}
-
-/* ==========================
-   IDENTIDAD VISUAL JUMEBA
-========================== */
-
-:root {
-    --verde: #080d32;
-    --verde-claro: #111b50;
-    --crema: #f5f2e8;
-    --blanco: #ffffff;
-    --naranja: #00d9ff;
-    --texto: #20243b;
-    --texto-suave: #62677b;
-}
-
-/* Cabecera azul noche */
-
-.cabecera {
-    background-color: #080d32;
-    border-bottom: 1px solid rgba(0, 217, 255, 0.25);
-}
-
-/* Portada con colores eléctricos */
-
-.portada {
-    justify-content: space-between;
-    gap: 40px;
-    background:
-        radial-gradient(
-            circle at 80% 45%,
-            rgba(0, 217, 255, 0.22),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 15% 90%,
-            rgba(255, 22, 143, 0.18),
-            transparent 35%
-        ),
-        linear-gradient(120deg, #080d32, #111b50);
-}
-
-/* Logotipo en la portada */
+/* Logotipo de la portada */
 
 .logo-portada {
     display: block;
@@ -279,59 +157,67 @@ body {
     filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.25));
 }
 
-/* Detalles fucsias */
 
-.portada h1 span {
-    color: #ff168f;
-}
-
-.etiqueta {
-    color: #00d9ff;
-}
-
-/* Botones eléctricos */
+/* ==========================================
+   4. BOTONES
+========================================== */
 
 .boton {
-    background-color: #00d9ff;
-    border-color: #00d9ff;
-    color: #080d32;
+    display: inline-block;
+    padding: 13px 25px;
+    border: 2px solid var(--cian);
+    border-radius: 8px;
+    background-color: var(--cian);
+    color: var(--azul-noche);
+    text-decoration: none;
+    font-weight: 800;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .boton:hover {
-    background-color: #ff168f;
-    border-color: #ff168f;
-    color: #ffffff;
+    transform: translateY(-3px);
+    background-color: var(--fucsia);
+    border-color: var(--fucsia);
+    color: var(--blanco);
 }
 
-/* Secciones claras */
+
+/* ==========================================
+   5. SECCIONES GENERALES
+========================================== */
+
+.seccion {
+    padding: 85px 10%;
+    text-align: center;
+}
+
+.seccion h2 {
+    margin-bottom: 20px;
+    color: var(--azul-noche);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+.seccion > p:not(.etiqueta) {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--texto-suave);
+    font-size: 1.08rem;
+}
 
 .seccion-alternativa {
     background-color: #e9eaf2;
 }
 
-/* Adaptación a móviles */
 
-@media (max-width: 700px) {
-    .portada {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 35px;
-    }
-
-    .portada-contenido {
-        width: 100%;
-    }
-
-    .logo-portada {
-        width: 190px;
-        min-width: 0;
-    }
-}
-
-/* ==========================
-   TARJETAS DE ACTIVIDADES
-========================== */
+/* ==========================================
+   6. ACTIVIDADES
+========================================== */
 
 .actividades-intro {
     max-width: 700px;
@@ -354,10 +240,11 @@ body {
     flex-direction: column;
     align-items: flex-start;
     min-height: 310px;
-    padding: 30px 25px;
+    padding: 25px;
+    overflow: hidden;
     border: 1px solid rgba(8, 13, 50, 0.08);
     border-radius: 16px;
-    background-color: #ffffff;
+    background-color: var(--blanco);
     box-shadow: 0 8px 25px rgba(8, 13, 50, 0.06);
     transition:
         transform 0.25s ease,
@@ -367,87 +254,31 @@ body {
 
 .tarjeta-actividad:hover {
     transform: translateY(-8px);
-    border-color: #00d9ff;
+    border-color: var(--cian);
     box-shadow: 0 16px 35px rgba(8, 13, 50, 0.13);
-}
-
-.actividad-icono {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 65px;
-    height: 65px;
-    margin-bottom: 22px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #e4faff, #fce5f2);
-    font-size: 2rem;
 }
 
 .tarjeta-actividad h3 {
     margin-bottom: 12px;
-    color: #080d32;
+    color: var(--azul-noche);
     font-size: 1.25rem;
     line-height: 1.3;
 }
 
 .tarjeta-actividad p {
     margin-bottom: 22px;
-    color: #62677b;
+    color: var(--texto-suave);
     font-size: 0.96rem;
     line-height: 1.7;
 }
 
-.enlace-tarjeta {
-    display: inline-block;
-    margin-top: auto;
-    color: #111b50;
-    font-weight: 800;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
 
-.enlace-tarjeta span {
-    display: inline-block;
-    margin-left: 5px;
-    color: #ff168f;
-    transition: transform 0.2s ease;
-}
-
-.enlace-tarjeta:hover {
-    color: #d90b78;
-}
-
-.enlace-tarjeta:hover span {
-    transform: translateX(5px);
-}
-
-/* Adaptación a tabletas y móviles */
-
-@media (max-width: 900px) {
-    .actividades-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .actividades-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        margin-top: 30px;
-    }
-
-    .tarjeta-actividad {
-        min-height: auto;
-        padding: 25px;
-    }
-}
-
-/* ==========================
-   NOTICIAS Y NOVEDADES
-========================== */
+/* ==========================================
+   7. NOTICIAS Y NOVEDADES
+========================================== */
 
 .noticias {
-    background-color: #f5f2e8;
+    background-color: var(--crema);
 }
 
 .noticias-intro {
@@ -470,7 +301,7 @@ body {
     overflow: hidden;
     border: 1px solid rgba(8, 13, 50, 0.08);
     border-radius: 16px;
-    background-color: #ffffff;
+    background-color: var(--blanco);
     box-shadow: 0 8px 25px rgba(8, 13, 50, 0.06);
     transition:
         transform 0.25s ease,
@@ -482,50 +313,87 @@ body {
     box-shadow: 0 16px 35px rgba(8, 13, 50, 0.13);
 }
 
-/* Zona visual de cada noticia */
 
-.noticia-imagen {
+/* ==========================================
+   8. IMÁGENES DE ACTIVIDADES Y NOTICIAS
+========================================== */
+
+/* Contenedor compartido de imágenes */
+
+.noticia-imagen,
+.actividad-imagen {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 190px;
-    font-size: 4rem;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--azul-noche);
 }
 
-.imagen-juegos {
-    background:
-        radial-gradient(circle at 20% 20%, #173d35, transparent 45%),
-        linear-gradient(135deg, #080d32, #00a9ce);
+/* Imágenes */
+
+.noticia-imagen img,
+.actividad-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.imagen-comunidad {
-    background:
-        radial-gradient(circle at 80% 20%, #ff168f, transparent 40%),
-        linear-gradient(135deg, #111b50, #080d32);
+/* Efecto al pasar el ratón */
+
+.tarjeta-noticia:hover .noticia-imagen img,
+.tarjeta-actividad:hover .actividad-imagen img {
+    transform: scale(1.07);
 }
 
-.imagen-eventos {
-    background:
-        radial-gradient(circle at 80% 80%, #00d9ff, transparent 40%),
-        linear-gradient(135deg, #080d32, #34316e);
-}
+/* Etiquetas sobre las imágenes */
 
 .noticia-categoria {
     position: absolute;
+    z-index: 1;
     bottom: 14px;
     left: 15px;
     padding: 5px 10px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
-    background: rgba(8, 13, 50, 0.75);
-    color: #ffffff;
+    background: rgba(8, 13, 50, 0.8);
+    color: var(--blanco);
     font-size: 0.68rem;
     font-weight: 800;
     letter-spacing: 1px;
 }
 
-/* Texto de las noticias */
+/* Espacio entre la imagen de actividad y su texto */
+
+.actividad-imagen {
+    margin-bottom: 22px;
+}
+
+/* Fondos de reserva si alguna imagen no carga */
+
+.imagen-juegos {
+    background:
+        radial-gradient(circle at 20% 20%, #173d75, transparent 45%),
+        linear-gradient(135deg, var(--azul-noche), #00a9ce);
+}
+
+.imagen-comunidad {
+    background:
+        radial-gradient(circle at 80% 20%, var(--fucsia), transparent 40%),
+        linear-gradient(135deg, var(--azul), var(--azul-noche));
+}
+
+.imagen-eventos {
+    background:
+        radial-gradient(circle at 80% 80%, var(--cian), transparent 40%),
+        linear-gradient(135deg, var(--azul-noche), #34316e);
+}
+
+
+/* ==========================================
+   9. CONTENIDO DE LAS TARJETAS DE NOTICIAS
+========================================== */
 
 .noticia-contenido {
     display: flex;
@@ -545,14 +413,14 @@ body {
 
 .noticia-contenido h3 {
     margin-bottom: 12px;
-    color: #080d32;
+    color: var(--azul-noche);
     font-size: 1.2rem;
     line-height: 1.35;
 }
 
 .noticia-contenido > p:not(.noticia-fecha) {
     margin-bottom: 20px;
-    color: #62677b;
+    color: var(--texto-suave);
     font-size: 0.94rem;
     line-height: 1.65;
 }
@@ -561,25 +429,164 @@ body {
     margin-top: auto;
 }
 
-/* Adaptación a pantallas pequeñas */
+
+/* ==========================================
+   10. ENLACES DE LAS TARJETAS
+========================================== */
+
+.enlace-tarjeta {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--azul);
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.enlace-tarjeta span {
+    display: inline-block;
+    margin-left: 5px;
+    color: var(--fucsia);
+    transition: transform 0.2s ease;
+}
+
+.enlace-tarjeta:hover {
+    color: #d90b78;
+}
+
+.enlace-tarjeta:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ==========================================
+   11. PIE DE PÁGINA
+========================================== */
+
+.pie {
+    padding: 25px 7%;
+    background-color: var(--azul-noche);
+    color: #e7eaf5;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   12. TABLETAS
+========================================== */
 
 @media (max-width: 900px) {
+    .actividades-grid,
     .noticias-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .portada {
+        gap: 25px;
+    }
+
+    .logo-portada {
+        width: 230px;
+    }
 }
 
-@media (max-width: 600px) {
+
+/* ==========================================
+   13. MÓVILES
+========================================== */
+
+@media (max-width: 700px) {
+    .cabecera {
+        flex-direction: column;
+        padding: 18px 5%;
+    }
+
+    .navegacion {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .navegacion a {
+        font-size: 0.88rem;
+    }
+
+    .portada {
+        min-height: 480px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 70px 7%;
+        text-align: center;
+    }
+
+    .portada-contenido {
+        width: 100%;
+    }
+
+    .portada h1 {
+        letter-spacing: -1px;
+    }
+
+    .portada-texto {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 1rem;
+    }
+
+    .logo-portada {
+        width: 190px;
+        min-width: 0;
+    }
+
+    .seccion {
+        padding: 65px 7%;
+    }
+
+    .actividades-grid,
     .noticias-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        margin-top: 30px;
     }
 
-    .noticia-imagen {
-        height: 175px;
+    .tarjeta-actividad {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .noticia-imagen,
+    .actividad-imagen {
+        height: 200px;
     }
 
     .noticia-contenido {
         min-height: 220px;
+    }
+}
+
+
+/* ==========================================
+   14. PANTALLAS MUY PEQUEÑAS
+========================================== */
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .navegacion {
+        gap: 10px 14px;
+    }
+
+    .navegacion a {
+        font-size: 0.82rem;
+    }
+
+    .portada h1 {
+        font-size: 2.5rem;
+    }
+
+    .seccion h2 {
+        font-size: 1.8rem;
     }
 }
