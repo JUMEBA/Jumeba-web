@@ -951,3 +951,37 @@ body {
         margin: 0 auto;
     }
 }
+.enlace-cartel {
+    display: block;
+    flex-shrink: 0;
+    align-self: center;
+    cursor: zoom-in;
+}
+
+.evento-cartel {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enlace-cartel:hover .evento-cartel {
+    transform: scale(1.04);
+    box-shadow: 0 8px 22px rgba(8, 13, 50, 0.25);
+}
+.evento-accion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.boton-whatsapp {
+    background: #25D366;
+    border-color: #25D366;
+    color: #073b20;
+    text-align: center;
+}
+
+.boton-whatsapp:hover {
+    background: #1ebe5d;
+    border-color: #1ebe5d;
+    color: #ffffff;
+}
