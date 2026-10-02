@@ -1068,3 +1068,40 @@ body {
         height: 240px;
     }
 }
+
+/* GALERÍA SIN FOTOGRAFÍAS */
+
+.galeria-vacia {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 45px 25px;
+    background: #f5f2e8;
+    border: 2px dashed #c9cbd8;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.galeria-vacia-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    background: var(--azul-noche);
+    color: var(--cian);
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.galeria-vacia h3 {
+    margin-bottom: 12px;
+    color: var(--azul-noche);
+    font-size: 1.35rem;
+}
+
+.galeria-vacia p {
+    max-width: 550px;
+    margin: 0 auto;
+    color: var(--texto-suave);
+}
