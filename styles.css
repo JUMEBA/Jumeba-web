@@ -226,3 +226,360 @@ body {
         padding: 65px 7%;
     }
 }
+
+/* ==========================
+   IDENTIDAD VISUAL JUMEBA
+========================== */
+
+:root {
+    --verde: #080d32;
+    --verde-claro: #111b50;
+    --crema: #f5f2e8;
+    --blanco: #ffffff;
+    --naranja: #00d9ff;
+    --texto: #20243b;
+    --texto-suave: #62677b;
+}
+
+/* Cabecera azul noche */
+
+.cabecera {
+    background-color: #080d32;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.25);
+}
+
+/* Portada con colores eléctricos */
+
+.portada {
+    justify-content: space-between;
+    gap: 40px;
+    background:
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(0, 217, 255, 0.22),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 90%,
+            rgba(255, 22, 143, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(120deg, #080d32, #111b50);
+}
+
+/* Logotipo en la portada */
+
+.logo-portada {
+    display: block;
+    width: min(30vw, 270px);
+    min-width: 180px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 18px;
+    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.25));
+}
+
+/* Detalles fucsias */
+
+.portada h1 span {
+    color: #ff168f;
+}
+
+.etiqueta {
+    color: #00d9ff;
+}
+
+/* Botones eléctricos */
+
+.boton {
+    background-color: #00d9ff;
+    border-color: #00d9ff;
+    color: #080d32;
+}
+
+.boton:hover {
+    background-color: #ff168f;
+    border-color: #ff168f;
+    color: #ffffff;
+}
+
+/* Secciones claras */
+
+.seccion-alternativa {
+    background-color: #e9eaf2;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 700px) {
+    .portada {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .portada-contenido {
+        width: 100%;
+    }
+
+    .logo-portada {
+        width: 190px;
+        min-width: 0;
+    }
+}
+
+/* ==========================
+   TARJETAS DE ACTIVIDADES
+========================== */
+
+.actividades-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--texto-suave);
+    font-size: 1.08rem;
+}
+
+.actividades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 45px auto 0;
+    text-align: left;
+}
+
+.tarjeta-actividad {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 310px;
+    padding: 30px 25px;
+    border: 1px solid rgba(8, 13, 50, 0.08);
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(8, 13, 50, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.tarjeta-actividad:hover {
+    transform: translateY(-8px);
+    border-color: #00d9ff;
+    box-shadow: 0 16px 35px rgba(8, 13, 50, 0.13);
+}
+
+.actividad-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 22px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e4faff, #fce5f2);
+    font-size: 2rem;
+}
+
+.tarjeta-actividad h3 {
+    margin-bottom: 12px;
+    color: #080d32;
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.tarjeta-actividad p {
+    margin-bottom: 22px;
+    color: #62677b;
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+.enlace-tarjeta {
+    display: inline-block;
+    margin-top: auto;
+    color: #111b50;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.enlace-tarjeta span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #ff168f;
+    transition: transform 0.2s ease;
+}
+
+.enlace-tarjeta:hover {
+    color: #d90b78;
+}
+
+.enlace-tarjeta:hover span {
+    transform: translateX(5px);
+}
+
+/* Adaptación a tabletas y móviles */
+
+@media (max-width: 900px) {
+    .actividades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .actividades-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .tarjeta-actividad {
+        min-height: auto;
+        padding: 25px;
+    }
+}
+
+/* ==========================
+   NOTICIAS Y NOVEDADES
+========================== */
+
+.noticias {
+    background-color: #f5f2e8;
+}
+
+.noticias-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--texto-suave);
+    font-size: 1.08rem;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 45px auto 0;
+    text-align: left;
+}
+
+.tarjeta-noticia {
+    overflow: hidden;
+    border: 1px solid rgba(8, 13, 50, 0.08);
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(8, 13, 50, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 35px rgba(8, 13, 50, 0.13);
+}
+
+/* Zona visual de cada noticia */
+
+.noticia-imagen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 190px;
+    font-size: 4rem;
+}
+
+.imagen-juegos {
+    background:
+        radial-gradient(circle at 20% 20%, #173d35, transparent 45%),
+        linear-gradient(135deg, #080d32, #00a9ce);
+}
+
+.imagen-comunidad {
+    background:
+        radial-gradient(circle at 80% 20%, #ff168f, transparent 40%),
+        linear-gradient(135deg, #111b50, #080d32);
+}
+
+.imagen-eventos {
+    background:
+        radial-gradient(circle at 80% 80%, #00d9ff, transparent 40%),
+        linear-gradient(135deg, #080d32, #34316e);
+}
+
+.noticia-categoria {
+    position: absolute;
+    bottom: 14px;
+    left: 15px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    background: rgba(8, 13, 50, 0.75);
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Texto de las noticias */
+
+.noticia-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 250px;
+    padding: 23px;
+}
+
+.noticia-fecha {
+    margin-bottom: 10px;
+    color: #d90b78;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.noticia-contenido h3 {
+    margin-bottom: 12px;
+    color: #080d32;
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+.noticia-contenido > p:not(.noticia-fecha) {
+    margin-bottom: 20px;
+    color: #62677b;
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
+.noticia-contenido .enlace-tarjeta {
+    margin-top: auto;
+}
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 900px) {
+    .noticias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .noticias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .noticia-imagen {
+        height: 175px;
+    }
+
+    .noticia-contenido {
+        min-height: 220px;
+    }
+}
