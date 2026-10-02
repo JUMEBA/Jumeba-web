@@ -1,0 +1,134 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f7f2;
+  color: #1e302a;
+  line-height: 1.6;
+}
+
+/* CABECERA */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background-color: #173d35;
+  color: white;
+}
+
+.logo {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #f5bd59;
+}
+
+/* SECCIONES */
+
+section {
+  padding: 90px 8%;
+}
+
+section h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+section p {
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+
+/* PORTADA */
+
+#inicio {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #e9eee6;
+}
+
+#inicio h1 {
+  max-width: 750px;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+#inicio > a {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 13px 24px;
+  background-color: #e49a3c;
+  color: #173d35;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  padding: 25px 8%;
+  background-color: #173d35;
+  color: white;
+  text-align: center;
+}
+
+/* DISEÑO PARA MÓVILES */
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  #inicio {
+    min-height: 430px;
+  }
+}
