@@ -783,3 +783,102 @@ body {
         padding-left: 0;
     }
 }
+
+
+/* CONTACTO */
+
+.contacto {
+    background: #e9eaf2;
+}
+
+.contacto-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--texto-suave);
+    font-size: 1.08rem;
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto-tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 25px;
+    background: #fff;
+    border: 1px solid #e0e2ed;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(8, 13, 50, 0.08);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.contacto-tarjeta:hover {
+    transform: translateY(-6px);
+    border-color: var(--cian);
+}
+
+.contacto-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    background: var(--azul-noche);
+    color: var(--cian);
+    border-radius: 50%;
+    font-size: 1.8rem;
+}
+
+.contacto-tarjeta h3 {
+    margin-bottom: 12px;
+    color: var(--azul-noche);
+    font-size: 1.3rem;
+}
+
+.contacto-tarjeta p {
+    flex-grow: 1;
+    margin-bottom: 22px;
+    color: var(--texto-suave);
+}
+
+.boton-contacto {
+    display: inline-block;
+    padding: 11px 20px;
+    background: var(--azul-noche);
+    color: #fff;
+    border: 2px solid var(--cian);
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.boton-contacto:hover {
+    background: var(--cian);
+    color: var(--azul-noche);
+}
+
+.contacto-final {
+    margin-top: 35px;
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-tarjeta {
+        padding: 28px 22px;
+    }
+}
