@@ -135,7 +135,24 @@ body {
 }
 
 .portada h1 span {
-    color: var(--fucsia);
+    background: linear-gradient(
+        180deg,
+        #00e5ff 0%,
+        #168bff 38%,
+        #6550cf 70%,
+        #ff168f 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-text-stroke: 1px rgba(190, 190, 255, 0.8);
+
+    filter:
+        drop-shadow(0 0 5px rgba(0, 217, 255, 0.35))
+        drop-shadow(0 0 10px rgba(255, 22, 143, 0.2));
 }
 
 .portada-texto {
