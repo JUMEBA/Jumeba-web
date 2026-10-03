@@ -1892,3 +1892,125 @@ body {
         transform: none;
     }
 }
+
+/* ==============================
+   PIE DE PÁGINA JUMEBA
+============================== */
+
+.pie {
+    background: #071426;
+    color: #f4f7fb;
+    padding: 55px 7% 20px;
+    border-top: 2px solid #00d9ff;
+}
+
+.pie-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.4fr 0.8fr;
+    gap: 35px;
+}
+
+.pie-contenido h3 {
+    color: #00d9ff;
+    font-size: 1.1rem;
+    margin: 0 0 18px;
+}
+
+.pie-marca,
+.pie-enlaces,
+.pie-contacto,
+.pie-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pie-logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background: linear-gradient(
+        90deg,
+        #00d9ff,
+        #8b5cf6,
+        #ff3cac
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.pie-marca p,
+.pie-contacto p {
+    color: #c5d0df;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.pie-marca strong {
+    color: #ff3cac;
+    margin-top: 5px;
+}
+
+.pie a:not(.pie-logo) {
+    color: #c5d0df;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pie a:not(.pie-logo):hover {
+    color: #00d9ff;
+}
+
+.pie-inferior {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.pie-inferior p {
+    margin: 0;
+    color: #aebdce;
+    font-size: 0.9rem;
+}
+
+/* Adaptación a tabletas */
+@media (max-width: 900px) {
+    .pie-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+    .pie {
+        padding: 40px 7% 20px;
+    }
+
+    .pie-contenido {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .pie-inferior {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pie a {
+        transition: none;
+    }
+}
