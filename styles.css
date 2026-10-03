@@ -147,10 +147,12 @@ body {
 
 /* Logotipo de la portada */
 
+/* Logotipo de la portada */
+
 .logo-portada {
     display: block;
-    width: min(30vw, 270px);
-    min-width: 180px;
+    width: min(38vw, 360px);
+    min-width: 220px;
     height: auto;
     object-fit: contain;
     border-radius: 18px;
@@ -487,7 +489,8 @@ body {
     }
 
     .logo-portada {
-        width: 230px;
+        width: 280px;
+        min-width: 0;
     }
 }
 
@@ -534,7 +537,7 @@ body {
     }
 
     .logo-portada {
-        width: 190px;
+        width: 220px;
         min-width: 0;
     }
 
