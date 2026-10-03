@@ -1506,4 +1506,152 @@ body {
     .galeria-foto:hover img {
         transform: none;
     }
+} 
+
+/* ========================================
+   VISOR AMPLIADO DE LA GALERÍA (LIGHTBOX)
+======================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    padding: 60px 70px;
+    box-sizing: border-box;
+    background: rgba(5, 8, 20, 0.94);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.activo {
+    display: flex;
+}
+
+.lightbox-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.lightbox-contenido img {
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-contenido figcaption {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Botones del visor */
+
+.lightbox button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.lightbox button:hover {
+    background: #00d9ff;
+    color: #071426;
+    transform: scale(1.08);
+}
+
+.lightbox-cerrar {
+    top: 20px;
+    right: 25px;
+    width: 46px;
+    height: 46px;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.lightbox-anterior,
+.lightbox-siguiente {
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+    transform: translateY(-50%);
+}
+
+.lightbox-anterior:hover,
+.lightbox-siguiente:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-anterior {
+    left: 20px;
+}
+
+.lightbox-siguiente {
+    right: 20px;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 600px) {
+    .lightbox {
+        padding: 60px 15px;
+    }
+
+    .lightbox-contenido img {
+        max-height: 70vh;
+    }
+
+    .lightbox-cerrar {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox-anterior,
+    .lightbox-siguiente {
+        top: auto;
+        bottom: 12px;
+        width: 42px;
+        height: 42px;
+        transform: none;
+    }
+
+    .lightbox-anterior:hover,
+    .lightbox-siguiente:hover {
+        transform: scale(1.08);
+    }
+
+    .lightbox-anterior {
+        left: calc(50% - 52px);
+    }
+
+    .lightbox-siguiente {
+        right: calc(50% - 52px);
+    }
+
+    .lightbox-contenido figcaption {
+        font-size: 0.9rem;
+    }
 }

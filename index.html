@@ -310,6 +310,7 @@
 </section>
 
 
+
 <section id="galeria" class="seccion galeria">
     <p class="etiqueta">Momentos JUMEBA</p>
     <h2>Nuestra comunidad en imágenes</h2>
@@ -318,87 +319,104 @@
         ¡Así vivimos nuestra afición por los juegos de mesa!
     </p>
 
-    
+    <!-- ÁLBUM: 2 DE OCTUBRE DE 2026 -->
+    <div class="galeria-albumes">
+        <details class="album-desplegable">
+            <summary class="album-cabecera">
+                <div class="album-fecha">
+                    <span class="album-dia">02</span>
+                    <span class="album-mes">OCT</span>
+                </div>
 
-<!-- ÁLBUM: 2 DE OCTUBRE DE 2026 -->
-<div class="galeria-albumes">
-    <details class="album-desplegable">
-        <summary class="album-cabecera">
-            <div class="album-fecha">
-                <span class="album-dia">02</span>
-                <span class="album-mes">OCT</span>
+                <div class="album-titulo">
+                    <span class="album-tipo">QUEDADA JUMEBA</span>
+                    <h3>Dados, risas y buenos momentos</h3>
+                    <p>Viernes, 2 de octubre de 2026 · AAVV de Cerro Gordo</p>
+                    <span class="album-cantidad">📸 9 fotografías</span>
+                </div>
+
+                <span class="album-flecha" aria-hidden="true">⌄</span>
+            </summary>
+
+            <div class="galeria-grid">
+                <a href="img/02-10-2026/02-10-1.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-1.jpeg" alt="Partida de juegos de mesa en JUMEBA, 2 de octubre de 2026" loading="lazy">
+                    <span>Una tarde de juegos</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-2.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-2.jpeg" alt="Momento de la quedada de JUMEBA, 2 de octubre de 2026" loading="lazy">
+                    <span>Compartiendo la afición</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-3.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-3.jpeg" alt="Juegos de mesa durante la quedada de JUMEBA" loading="lazy">
+                    <span>¡Que empiece la partida!</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-4.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-4.jpeg" alt="Fotografía de la actividad de JUMEBA" loading="lazy">
+                    <span>Grandes momentos</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-5.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-5.jpeg" alt="Partida compartida en la AAVV de Cerro Gordo" loading="lazy">
+                    <span>Estrategia y diversión</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-6.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-6.jpeg" alt="Participantes disfrutando de los juegos de mesa" loading="lazy">
+                    <span>En buena compañía</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-7.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-7.jpeg" alt="Recuerdo de la quedada de juegos de JUMEBA" loading="lazy">
+                    <span>Momentos JUMEBA</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-8.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-8.jpeg" alt="Jornada de juegos de mesa del 2 de octubre" loading="lazy">
+                    <span>Otra partida más</span>
+                </a>
+
+                <a href="img/02-10-2026/02-10-9.jpeg" class="galeria-foto">
+                    <img src="img/02-10-2026/02-10-9.jpeg" alt="Recuerdo final de la quedada de JUMEBA" loading="lazy">
+                    <span>¡Hasta la próxima!</span>
+                </a>
             </div>
+        </details>
+    </div>
+</section>
 
-            <div class="album-titulo">
-                <span class="album-tipo">QUEDADA JUMEBA</span>
-                <h3>Dados, risas y buenos momentos</h3>
-                <p>Viernes, 2 de octubre de 2026 · AAVV de Cerro Gordo</p>
-                <span class="album-cantidad">📸 9 fotografías</span>
-            </div>
+<!-- VISOR AMPLIADO DE LA GALERÍA -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-cerrar" id="lightboxCerrar"
+            aria-label="Cerrar fotografía">&times;</button>
 
-            <span class="album-flecha" aria-hidden="true">⌄</span>
-        </summary>
+    <button class="lightbox-anterior" id="lightboxAnterior"
+            aria-label="Fotografía anterior">&#10094;</button>
 
-        <div class="galeria-grid">
-            <a href="img/02-10-2026/02-10-1.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-1.jpeg" alt="Partida de juegos de mesa en JUMEBA, 2 de octubre de 2026" loading="lazy">
-                <span>Una tarde de juegos</span>
-            </a>
+    <figure class="lightbox-contenido">
+        <img id="lightboxImagen" src="" alt="">
+        <figcaption id="lightboxPie"></figcaption>
+    </figure>
 
-            <a href="img/02-10-2026/02-10-2.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-2.jpeg" alt="Momento de la quedada de JUMEBA, 2 de octubre de 2026" loading="lazy">
-                <span>Compartiendo la afición</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-3.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-3.jpeg" alt="Juegos de mesa durante la quedada de JUMEBA" loading="lazy">
-                <span>¡Que empiece la partida!</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-4.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-4.jpeg" alt="Fotografía de la actividad de JUMEBA" loading="lazy">
-                <span>Grandes momentos</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-5.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-5.jpeg" alt="Partida compartida en la AAVV de Cerro Gordo" loading="lazy">
-                <span>Estrategia y diversión</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-6.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-6.jpeg" alt="Participantes disfrutando de los juegos de mesa" loading="lazy">
-                <span>En buena compañía</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-7.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-7.jpeg" alt="Recuerdo de la quedada de juegos de JUMEBA" loading="lazy">
-                <span>Momentos JUMEBA</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-8.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-8.jpeg" alt="Jornada de juegos de mesa del 2 de octubre" loading="lazy">
-                <span>Otra partida más</span>
-            </a>
-
-            <a href="img/02-10-2026/02-10-9.jpeg" class="galeria-foto" target="_blank" rel="noopener noreferrer">
-                <img src="img/02-10-2026/02-10-9.jpeg" alt="Recuerdo final de la quedada de JUMEBA" loading="lazy">
-                <span>¡Hasta la próxima!</span>
-            </a>
-        </div>
-    </details>
+    <button class="lightbox-siguiente" id="lightboxSiguiente"
+            aria-label="Fotografía siguiente">&#10095;</button>
 </div>
 
-        <section class="seccion seccion-alternativa" id="contacto">
-            <p class="etiqueta">¡HABLEMOS!</p>
-            <h2>¿Te apetece conocernos?</h2>
-            <p>
-                Si te gustan los juegos de mesa y quieres formar parte
-                de nuestra comunidad, estaremos encantados de conocerte.
-            </p>
-            <a href="mailto:jumeba.badajoz@gmail.com" class="boton">Contactar</a>
-        </section>
-        
+<!-- INVITACIÓN -->
+<section class="seccion seccion-alternativa" id="invitacion">
+    <p class="etiqueta">¡HABLEMOS!</p>
+    <h2>¿Te apetece conocernos?</h2>
+    <p>
+        Si te gustan los juegos de mesa y quieres formar parte
+        de nuestra comunidad, estaremos encantados de conocerte.
+    </p>
+    <a href="mailto:jumeba.badajoz@gmail.com" class="boton">Contactar</a>
+</section>
 
+<!-- CONTACTO -->
 <section id="contacto" class="seccion contacto">
     <p class="etiqueta">¡Estamos en contacto!</p>
     <h2>¿Te apetece jugar con nosotros?</h2>
@@ -409,11 +427,12 @@
     </p>
 
     <div class="contacto-contenido">
+        <!-- CORREO ELECTRÓNICO -->
         <div class="contacto-tarjeta">
             <div class="contacto-icono">
-    <img src="https://cdn.simpleicons.org/gmail/EA4335"
-         alt="Gmail">
-</div>
+                <img src="https://cdn.simpleicons.org/gmail/EA4335"
+                     alt="Gmail">
+            </div>
             <h3>Correo electrónico</h3>
             <p>Escríbenos si tienes alguna duda o quieres más información.</p>
             <a href="mailto:jumeba.badajoz@gmail.com"
@@ -422,21 +441,22 @@
             </a>
         </div>
 
+        <!-- TELÉFONO -->
         <div class="contacto-tarjeta">
             <div class="contacto-icono">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-        19.79 19.79 0 0 1-8.63-3.07
-        19.5 19.5 0 0 1-6-6
-        A19.79 19.79 0 0 1 2.12 4.18
-        2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
-        c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91
-        a16 16 0 0 0 6 6l1.27-1.27
-        a2 2 0 0 1 2.11-.45
-        c.9.34 1.84.58 2.8.7
-        A2 2 0 0 1 22 16.92z"/>
-    </svg>
-</div>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                    19.79 19.79 0 0 1-8.63-3.07
+                    19.5 19.5 0 0 1-6-6
+                    A19.79 19.79 0 0 1 2.12 4.18
+                    2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+                    c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91
+                    a16 16 0 0 0 6 6l1.27-1.27
+                    a2 2 0 0 1 2.11-.45
+                    c.9.34 1.84.58 2.8.7
+                    A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </div>
             <h3>Teléfono</h3>
             <p>También puedes contactar con nosotros por teléfono.</p>
             <a href="tel:+34637318171" class="boton-contacto">
@@ -444,11 +464,12 @@
             </a>
         </div>
 
+        <!-- FACEBOOK -->
         <div class="contacto-tarjeta">
             <div class="contacto-icono">
-    <img src="https://cdn.simpleicons.org/facebook/0866FF"
-         alt="Facebook">
-</div>
+                <img src="https://cdn.simpleicons.org/facebook/0866FF"
+                     alt="Facebook">
+            </div>
             <h3>Facebook</h3>
             <p>Síguenos en Facebook para estar al día de la asociación.</p>
             <a href="https://www.facebook.com/profile.php?id=100075122376832"
@@ -459,11 +480,12 @@
             </a>
         </div>
 
+        <!-- INSTAGRAM -->
         <div class="contacto-tarjeta">
             <div class="contacto-icono">
-    <img src="https://cdn.simpleicons.org/instagram/E4405F"
-         alt="Instagram">
-</div>
+                <img src="https://cdn.simpleicons.org/instagram/E4405F"
+                     alt="Instagram">
+            </div>
             <h3>Instagram</h3>
             <p>Descubre nuestras actividades y comparte la afición.</p>
             <a href="https://www.instagram.com/jumeba_/"
@@ -479,12 +501,12 @@
         JUMEBA — Jugar es conectar.
     </p>
 </section>
-    </main>
+</main>
 
-    <footer class="pie">
-        <p>© 2021 JUMEBA · Jugar es conectar</p>
-    </footer>
+<footer class="pie">
+    <p>© 2021 JUMEBA · Jugar es conectar</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
