@@ -1120,10 +1120,13 @@ body {
     color: #ffffff;
 }
 
-/* GALERÍA */
+
+/* ==========================================
+   GALERÍA JUMEBA
+========================================== */
 
 .galeria {
-    background: #fff;
+    background: #ffffff;
 }
 
 .galeria-intro {
@@ -1131,24 +1134,172 @@ body {
     margin: 0 auto 40px;
     color: var(--texto-suave);
     font-size: 1.08rem;
+    line-height: 1.7;
 }
+
+/* CONTENEDOR DE ÁLBUMES */
+
+.galeria-albumes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.galeria-album {
+    width: 100%;
+}
+
+/* TARJETA DESPLEGABLE DEL ÁLBUM */
+
+.album-desplegable {
+    overflow: hidden;
+    border: 1px solid #e7e8ef;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(8, 13, 50, 0.06);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.album-desplegable:hover {
+    border-color: var(--cian);
+    box-shadow: 0 10px 26px rgba(8, 13, 50, 0.1);
+}
+
+/* CABECERA DEL ÁLBUM */
+
+.album-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.2s ease;
+}
+
+.album-cabecera:hover {
+    background-color: #f8fbff;
+}
+
+.album-cabecera::-webkit-details-marker {
+    display: none;
+}
+
+.album-cabecera::marker {
+    content: "";
+}
+
+.album-cabecera:focus-visible {
+    outline: 3px solid var(--cian);
+    outline-offset: -4px;
+}
+
+/* FECHA DEL ÁLBUM */
+
+.album-fecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 72px;
+    height: 76px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #00d9ff, #00a9ce);
+    color: var(--azul-noche);
+    text-align: center;
+}
+
+.album-dia {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.album-mes {
+    margin-top: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* INFORMACIÓN DEL ÁLBUM */
+
+.album-titulo {
+    flex: 1;
+    min-width: 0;
+}
+
+.album-tipo {
+    display: inline-block;
+    color: #d90b78;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.album-titulo h3 {
+    margin: 5px 0;
+    color: var(--azul-noche);
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+.album-titulo p {
+    margin: 0 0 7px;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.album-cantidad {
+    color: #555d76;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* FLECHA DESPLEGABLE */
+
+.album-flecha {
+    flex-shrink: 0;
+    color: var(--azul-noche);
+    font-size: 1.8rem;
+    transition: transform 0.25s ease;
+}
+
+.album-desplegable[open] .album-flecha {
+    transform: rotate(180deg);
+}
+
+/* CUADRÍCULA DE FOTOGRAFÍAS */
 
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 18px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
+.album-desplegable .galeria-grid {
+    padding: 0 24px 24px;
+}
+
+/* TARJETAS DE FOTOGRAFÍAS */
+
 .galeria-foto {
     position: relative;
     display: block;
-    height: 270px;
+    height: 230px;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 13px;
     background: var(--azul-noche);
-    box-shadow: 0 8px 24px rgba(8, 13, 50, 0.12);
+    box-shadow: 0 6px 18px rgba(8, 13, 50, 0.1);
     text-decoration: none;
 }
 
@@ -1161,7 +1312,7 @@ body {
 }
 
 .galeria-foto:hover img {
-    transform: scale(1.08);
+    transform: scale(1.07);
 }
 
 .galeria-foto span {
@@ -1169,12 +1320,18 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 35px 18px 16px;
-    background: linear-gradient(transparent, rgba(8, 13, 50, 0.9));
-    color: #fff;
-    font-size: 1.05rem;
+    padding: 35px 16px 14px;
+    background: linear-gradient(
+        transparent,
+        rgba(8, 13, 50, 0.9)
+    );
+    color: #ffffff;
+    font-size: 0.95rem;
     font-weight: bold;
+    line-height: 1.4;
 }
+
+/* NOTA INFERIOR */
 
 .galeria-nota {
     margin-top: 30px;
@@ -1185,22 +1342,6 @@ body {
 .galeria-nota a {
     color: var(--azul);
     font-weight: bold;
-}
-
-@media (max-width: 900px) {
-    .galeria-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .galeria-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .galeria-foto {
-        height: 240px;
-    }
 }
 
 /* GALERÍA SIN FOTOGRAFÍAS */
@@ -1238,4 +1379,131 @@ body {
     max-width: 550px;
     margin: 0 auto;
     color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+/* TABLETAS */
+
+@media (max-width: 900px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .album-desplegable .galeria-grid {
+        gap: 14px;
+    }
+
+    .galeria-foto {
+        height: 210px;
+    }
+}
+
+/* MÓVILES */
+
+@media (max-width: 600px) {
+    .galeria-intro {
+        font-size: 1rem;
+    }
+
+    .galeria-albumes {
+        gap: 18px;
+    }
+
+    .album-cabecera {
+        gap: 13px;
+        padding: 16px;
+    }
+
+    .album-fecha {
+        width: 60px;
+        height: 66px;
+    }
+
+    .album-dia {
+        font-size: 1.5rem;
+    }
+
+    .album-mes {
+        font-size: 0.62rem;
+    }
+
+    .album-titulo h3 {
+        font-size: 1rem;
+    }
+
+    .album-titulo p {
+        font-size: 0.78rem;
+    }
+
+    .album-cantidad {
+        font-size: 0.75rem;
+    }
+
+    .album-flecha {
+        font-size: 1.5rem;
+    }
+
+    .album-desplegable .galeria-grid {
+        padding: 0 14px 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .galeria-foto {
+        height: 155px;
+        border-radius: 10px;
+    }
+
+    .galeria-foto span {
+        padding: 25px 9px 10px;
+        font-size: 0.8rem;
+    }
+
+    .galeria-vacia {
+        padding: 35px 18px;
+    }
+
+    .galeria-vacia h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* MÓVILES MUY PEQUEÑOS */
+
+@media (max-width: 360px) {
+    .album-cabecera {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .album-fecha {
+        width: 54px;
+        height: 60px;
+    }
+
+    .album-titulo h3 {
+        font-size: 0.92rem;
+    }
+
+    .album-desplegable .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-foto {
+        height: 210px;
+    }
+}
+
+/* ACCESIBILIDAD: MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+    .album-desplegable,
+    .album-flecha,
+    .galeria-foto img {
+        transition: none;
+    }
+
+    .galeria-foto:hover img {
+        transform: none;
+    }
 }
