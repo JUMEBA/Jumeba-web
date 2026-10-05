@@ -17,6 +17,7 @@
             <a href="#inicio">Inicio</a>
             <a href="#nosotros">Quiénes somos</a>
             <a href="#actividades">Actividades</a>
+            <a href="#ludoteca">Nuestra ludoteca</a>
             <a href="#calendario">Calendario</a>
             <a href="#noticias">Noticias</a>
             <a href="#galeria">Galería</a>
@@ -186,6 +187,46 @@
         </p>
     </div>
 </section>
+
+
+<!-- LUDOTECA -->
+<section id="ludoteca" class="seccion seccion-ludoteca">
+    <div class="contenedor">
+        <div class="encabezado-seccion">
+            <span class="etiqueta-seccion">Nuestros juegos</span>
+            <h2>Nuestra ludoteca</h2>
+            <p>Descubre algunos de los juegos que tenemos preparados para nuestras quedadas.</p>
+        </div>
+
+        <div class="ludoteca-albumes">
+            <details class="ludoteca-desplegable">
+                <summary class="ludoteca-resumen">
+                    <span class="ludoteca-icono">🎲</span>
+                    <span class="ludoteca-titulo">
+                        <strong>Catálogo de juegos</strong>
+                        <small>Explora nuestra colección y encuentra tu próximo juego favorito</small>
+                    </span>
+                    <span class="ludoteca-flecha">＋</span>
+                </summary>
+
+                <div class="ludoteca-contenido">
+                    <div class="ludoteca-buscador">
+                        <label for="buscador-juegos">Buscar un juego</label>
+                        <input
+                            type="search"
+                            id="buscador-juegos"
+                            placeholder="Escribe el nombre de un juego..."
+                        >
+                        <p id="contador-juegos" aria-live="polite"></p>
+                    </div>
+
+                    <div id="lista-juegos" class="ludoteca-grid"></div>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+<!-- FIN LUDOTECA -->
 
 <!-- CALENDARIO DE ACTIVIDADES -->
 
