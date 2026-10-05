@@ -2232,3 +2232,88 @@ body {
         gap: 12px;
     }
 }
+
+/* VISOR AMPLIADO DE LA LUDOTECA */
+
+.visor-ludoteca {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: rgba(3, 8, 20, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+.visor-ludoteca.activo {
+    display: flex;
+}
+
+.visor-ludoteca-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.visor-ludoteca-contenido img {
+    display: block;
+    max-width: 85vw;
+    max-height: 78vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#visor-ludoteca-titulo {
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.visor-ludoteca-cerrar {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 2.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.visor-ludoteca-cerrar:hover {
+    color: #00dcff;
+    transform: scale(1.12);
+}
+
+.juego-tarjeta img {
+    cursor: zoom-in;
+}
+
+@media (max-width: 600px) {
+    .visor-ludoteca {
+        padding: 12px;
+    }
+
+    .visor-ludoteca-contenido img {
+        max-width: 94vw;
+        max-height: 75vh;
+    }
+
+    .visor-ludoteca-cerrar {
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+}

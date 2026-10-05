@@ -166,6 +166,60 @@ document.addEventListener("DOMContentLoaded", () => {
     const listaJuegos = document.getElementById("lista-juegos");
     const buscador = document.getElementById("buscador-juegos");
     const contador = document.getElementById("contador-juegos");
+    
+    // Visor ampliado de las imágenes
+    const visor = document.getElementById("visor-ludoteca");
+    const visorImagen = document.getElementById("visor-ludoteca-imagen");
+    const visorTitulo = document.getElementById("visor-ludoteca-titulo");
+    const cerrarVisor = document.querySelector(".visor-ludoteca-cerrar");
+
+    function abrirVisor(imagen, titulo) {
+        if (!visor || !visorImagen || !visorTitulo) return;
+
+        visorImagen.src = imagen;
+        visorImagen.alt = titulo;
+        visorTitulo.textContent = titulo;
+        visor.classList.add("activo");
+        visor.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function cerrarVisorLudoteca() {
+        if (!visor) return;
+
+        visor.classList.remove("activo");
+        visor.setAttribute("aria-hidden", "true");
+        visorImagen.src = "";
+        document.body.style.overflow = "";
+    }
+
+    // Abrir al pulsar cualquier imagen del catálogo
+    listaJuegos.addEventListener("click", (evento) => {
+        const imagen = evento.target.closest(".juego-tarjeta img");
+        if (!imagen) return;
+
+        const tarjeta = imagen.closest(".juego-tarjeta");
+        const titulo = tarjeta.querySelector("h3").textContent;
+
+        abrirVisor(imagen.src, titulo);
+    });
+
+    // Cerrar con el botón
+    cerrarVisor?.addEventListener("click", cerrarVisorLudoteca);
+
+    // Cerrar al pulsar fuera de la imagen
+    visor?.addEventListener("click", (evento) => {
+        if (evento.target === visor) {
+            cerrarVisorLudoteca();
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", (evento) => {
+        if (evento.key === "Escape" && visor?.classList.contains("activo")) {
+            cerrarVisorLudoteca();
+        }
+    });
 
     if (!listaJuegos || !buscador || !contador) return;
 
