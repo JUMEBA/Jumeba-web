@@ -279,3 +279,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mostrarJuegos();
 });
+
+// =========================
+// OCULTAR BLOOD ON THE CLOCKTOWER
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const eventoEspecial = document.querySelector(".evento-especial");
+
+    if (!eventoEspecial) return;
+
+    // El evento termina el 9 de octubre de 2026 a las 22:00
+    const fechaFin = new Date(2026, 9, 9, 22, 0, 0);
+
+    function comprobarEvento() {
+        const ahora = new Date();
+
+        if (ahora >= fechaFin) {
+            eventoEspecial.style.display = "none";
+        }
+    }
+
+    // Comprobar al abrir la página
+    comprobarEvento();
+
+    // Volver a comprobar cada 30 segundos
+    setInterval(comprobarEvento, 30000);
+});
