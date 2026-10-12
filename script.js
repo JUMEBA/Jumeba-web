@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "EL SEÑOR DE LOS ANILLOS: BAZAS",
         "SHUTTERPOINT STAR WARS",
         "SIMILO: EL SEÑOR DE LOS ANILLOS"
+        "BLOOD ON THE CLOCKTOWER"
     ];
 
     const listaJuegos = document.getElementById("lista-juegos");
