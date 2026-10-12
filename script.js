@@ -1,13 +1,22 @@
-
+// ========================================
 // JUMEBA - JavaScript principal
+// ========================================
 
 console.log("¡Bienvenido a JUMEBA!");
 
+document.addEventListener("DOMContentLoaded", () => {
+    iniciarLightboxGaleria();
+    iniciarLudoteca();
+    iniciarOcultarEventoEspecial();
+    iniciarTecladoGlobal();
+});
+
+
 // ========================================
-// VISOR AMPLIADO DE LA GALERÍA (LIGHTBOX)
+// 1. VISOR AMPLIADO DE LA GALERÍA (LIGHTBOX)
 // ========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+function iniciarLightboxGaleria() {
     const fotos = Array.from(document.querySelectorAll(".galeria-foto"));
     const lightbox = document.getElementById("lightbox");
 
@@ -73,25 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Controles de teclado.
-    document.addEventListener("keydown", (evento) => {
-        if (!lightbox.classList.contains("activo")) return;
+    // Exponer funciones para el manejador global de teclado.
+    lightbox._cerrarVisor = cerrarVisor;
+    lightbox._fotoAnterior = fotoAnterior;
+    lightbox._fotoSiguiente = fotoSiguiente;
+}
 
-        if (evento.key === "Escape") {
-            cerrarVisor();
-        } else if (evento.key === "ArrowLeft") {
-            fotoAnterior();
-        } else if (evento.key === "ArrowRight") {
-            fotoSiguiente();
-        }
-    });
-});
 
-// =========================
-// LUDOTECA JUMEBA
-// =========================
+// ========================================
+// 2. LUDOTECA
+// ========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+function iniciarLudoteca() {
     const juegos = [
         "ISLA CALAVERA",
         "RHYNO HERO",
@@ -167,12 +169,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const listaJuegos = document.getElementById("lista-juegos");
     const buscador = document.getElementById("buscador-juegos");
     const contador = document.getElementById("contador-juegos");
-    
+
     // Visor ampliado de las imágenes
     const visor = document.getElementById("visor-ludoteca");
     const visorImagen = document.getElementById("visor-ludoteca-imagen");
     const visorTitulo = document.getElementById("visor-ludoteca-titulo");
-    const cerrarVisor = document.querySelector(".visor-ludoteca-cerrar");
+    const botonCerrarVisorLudoteca = document.querySelector(".visor-ludoteca-cerrar");
+
+    // Si falta la estructura base, no hacemos nada.
+    if (!listaJuegos || !buscador || !contador) return;
 
     function abrirVisor(imagen, titulo) {
         if (!visor || !visorImagen || !visorTitulo) return;
@@ -206,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Cerrar con el botón
-    cerrarVisor?.addEventListener("click", cerrarVisorLudoteca);
+    botonCerrarVisorLudoteca?.addEventListener("click", cerrarVisorLudoteca);
 
     // Cerrar al pulsar fuera de la imagen
     visor?.addEventListener("click", (evento) => {
@@ -215,15 +220,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Cerrar con la tecla Escape
-    document.addEventListener("keydown", (evento) => {
-        if (evento.key === "Escape" && visor?.classList.contains("activo")) {
-            cerrarVisorLudoteca();
-        }
-    });
+    // Exponer funciones para el manejador global de teclado.
+    if (visor) {
+        visor._cerrarVisorLudoteca = cerrarVisorLudoteca;
+    }
 
-    if (!listaJuegos || !buscador || !contador) return;
-
+    // Renderizar juegos
     function mostrarJuegos(filtro = "") {
         const busqueda = filtro.trim().toLocaleLowerCase("es");
 
@@ -259,6 +261,12 @@ document.addEventListener("DOMContentLoaded", () => {
             imagen.alt = juego.nombre;
             imagen.loading = "lazy";
 
+            // Si la imagen no carga, evitamos el icono de "roto"
+            imagen.onerror = () => {
+                imagen.onerror = null;
+                imagen.style.display = "none";
+            };
+
             const numero = document.createElement("span");
             numero.className = "juego-numero";
             numero.textContent = `#${juego.numero}`;
@@ -279,32 +287,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     mostrarJuegos();
-});
+}
 
-// =========================
-// OCULTAR BLOOD ON THE CLOCKTOWER
-// =========================
 
-document.addEventListener("DOMContentLoaded", () => {
+// ========================================
+// 3. OCULTAR EVENTO ESPECIAL PASADO
+// ========================================
 
+function iniciarOcultarEventoEspecial() {
     const eventoEspecial = document.querySelector(".evento-especial");
 
     if (!eventoEspecial) return;
 
     // El evento termina el 9 de octubre de 2026 a las 22:00
     const fechaFin = new Date(2026, 9, 9, 22, 0, 0);
+    const msHastaFin = fechaFin.getTime() - Date.now();
 
-    function comprobarEvento() {
-        const ahora = new Date();
-
-        if (ahora >= fechaFin) {
+    if (msHastaFin <= 0) {
+        // Ya ha pasado: lo ocultamos directamente
+        eventoEspecial.style.display = "none";
+    } else {
+        // Aún no ha pasado: programamos que se oculte justo al terminar
+        setTimeout(() => {
             eventoEspecial.style.display = "none";
-        }
+        }, msHastaFin);
     }
+}
 
-    // Comprobar al abrir la página
-    comprobarEvento();
 
-    // Volver a comprobar cada 30 segundos
-    setInterval(comprobarEvento, 30000);
-});
+// ========================================
+// 4. MANEJADOR GLOBAL DE TECLADO
+// ========================================
+
+function iniciarTecladoGlobal() {
+    document.addEventListener("keydown", (evento) => {
+        const lightbox = document.getElementById("lightbox");
+        const visorLudoteca = document.getElementById("visor-ludoteca");
+
+        // --- Lightbox de la galería ---
+        if (lightbox?.classList.contains("activo")) {
+            if (evento.key === "Escape") {
+                lightbox._cerrarVisor?.();
+            } else if (evento.key === "ArrowLeft") {
+                lightbox._fotoAnterior?.();
+            } else if (evento.key === "ArrowRight") {
+                lightbox._fotoSiguiente?.();
+            }
+            return;
+        }
+
+        // --- Visor de la ludoteca ---
+        if (visorLudoteca?.classList.contains("activo")) {
+            if (evento.key === "Escape") {
+                visorLudoteca._cerrarVisorLudoteca?.();
+            }
+        }
+    });
+}
