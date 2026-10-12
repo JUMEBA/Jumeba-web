@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "KING OF TOKIO",
         "EL SEÑOR DE LOS ANILLOS: BAZAS",
         "SHUTTERPOINT STAR WARS",
-        "SIMILO: EL SEÑOR DE LOS ANILLOS"
+        "SIMILO: EL SEÑOR DE LOS ANILLOS",
         "BLOOD ON THE CLOCKTOWER"
     ];
 
