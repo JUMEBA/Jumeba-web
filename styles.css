@@ -2216,3 +2216,26 @@ body {
         transform: none;
     }
 }
+
+/* ==========================================
+   CARTELES DE EVENTOS CON LIGHTBOX
+========================================== */
+
+/* El cartel dentro del enlace mantiene su tamaño */
+.enlace-cartel.galeria-foto {
+    height: auto;
+    border-radius: 9px;
+    background: transparent;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.enlace-cartel.galeria-foto img {
+    height: auto;
+    object-fit: contain;
+}
+
+/* Ocultamos el pie de foto en la tarjeta (solo se verá en el lightbox) */
+.enlace-cartel.galeria-foto span {
+    display: none;
+}
