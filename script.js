@@ -291,30 +291,55 @@ function iniciarLudoteca() {
 
 
 // ========================================
-// 3. OCULTAR EVENTO ESPECIAL PASADO
+// ========================================
+// 3. OCULTAR EVENTOS ESPECIALES PASADOS
 // ========================================
 
 function iniciarOcultarEventoEspecial() {
-    const eventoEspecial = document.querySelector(".evento-especial");
+    // Lista de eventos especiales con su fecha de fin.
+    // Cada entrada busca el artículo por su título (h3) y tiene una fecha límite.
+    // ⚠️ Formato de fecha: new Date(año, mes-1, día, hora, minuto, segundo)
+    //    Mes: 0 = enero, 9 = octubre, 10 = noviembre...
 
-    if (!eventoEspecial) return;
+    const eventosAEliminar = [
+        {
+            titulo: "Blood on the Clocktower",
+            fechaFin: new Date(2026, 9, 9, 22, 0, 0)   // 9 oct 2026, 22:00
+        },
+        {
+            titulo: "Charla-coloquio con Jesús Gordillo",
+            fechaFin: new Date(2026, 9, 30, 23, 0, 0)   // 30 oct 2026, 23:00
+        },
+        {
+            titulo: "Concurso de Halloween",
+            fechaFin: new Date(2026, 10, 1, 0, 0, 0)   // 1 nov 2026, 00:00
+        }
+    ];
 
-    // El evento termina el 9 de octubre de 2026 a las 22:00
-    const fechaFin = new Date(2026, 9, 9, 22, 0, 0);
-    const msHastaFin = fechaFin.getTime() - Date.now();
+    const eventos = document.querySelectorAll(".evento-especial");
 
-    if (msHastaFin <= 0) {
-        // Ya ha pasado: lo ocultamos directamente
-        eventoEspecial.style.display = "none";
-    } else {
-        // Aún no ha pasado: programamos que se oculte justo al terminar
-        setTimeout(() => {
-            eventoEspecial.style.display = "none";
-        }, msHastaFin);
-    }
+    eventos.forEach(evento => {
+        const tituloEvento = evento.querySelector("h3")?.textContent.trim();
+        if (!tituloEvento) return;
+
+        const config = eventosAEliminar.find(
+            e => e.titulo === tituloEvento
+        );
+        if (!config) return;
+
+        const msHastaFin = config.fechaFin.getTime() - Date.now();
+
+        if (msHastaFin <= 0) {
+            // Ya ha pasado: lo ocultamos directamente
+            evento.style.display = "none";
+        } else {
+            // Aún no ha pasado: programamos que se oculte justo al terminar
+            setTimeout(() => {
+                evento.style.display = "none";
+            }, msHastaFin);
+        }
+    });
 }
-
-
 // ========================================
 // 4. MANEJADOR GLOBAL DE TECLADO
 // ========================================
