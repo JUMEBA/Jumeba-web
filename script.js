@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     iniciarLudoteca();
     iniciarOcultarEventoEspecial();
     iniciarTecladoGlobal();
+    iniciarVideoLogoPortada();
 });
 
 
@@ -367,5 +368,73 @@ function iniciarTecladoGlobal() {
                 visorLudoteca._cerrarVisorLudoteca?.();
             }
         }
+    });
+}
+
+// ========================================
+// 5. VÍDEO DEL LOGO DE PORTADA (HOVER + TAP, SIN LOOP)
+// ========================================
+
+function iniciarVideoLogoPortada() {
+    const contenedor = document.getElementById("logoPortadaContenedor");
+    const video = document.getElementById("videoLogoPortada");
+
+    if (!contenedor || !video) return;
+
+    // El vídeo tiene sonido.
+    video.muted = false;
+
+    // Reproduce el vídeo desde el principio (una sola vez).
+    // Si ya se está reproduciendo, no hace nada.
+    function reproducirVideo() {
+        if (!video.paused) return; // ya está reproduciéndose
+
+        video.currentTime = 0;
+        video.play().catch(() => {
+            // Fallback: si el navegador bloquea el audio, silenciamos
+            video.muted = true;
+            video.play().catch(() => {});
+        });
+    }
+
+    // Vuelve al logo cuando el vídeo termina.
+    video.addEventListener("ended", () => {
+        contenedor.classList.remove("activo");
+        video.currentTime = 0;
+        video.muted = false; // restauramos para el próximo play
+    });
+
+    // --- Hover en escritorio ---
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        contenedor.addEventListener("mouseenter", () => {
+            reproducirVideo();
+        });
+
+        // Al salir del hover, si el vídeo no ha terminado, lo paramos
+        // y volvemos al logo.
+        contenedor.addEventListener("mouseleave", () => {
+            if (!video.paused) {
+                video.pause();
+                video.currentTime = 0;
+                contenedor.classList.remove("activo");
+                video.muted = false;
+            }
+        });
+    }
+
+    // --- Clic/tap en móvil/tablet (y también en escritorio) ---
+    contenedor.addEventListener("click", () => {
+        if (!video.paused) {
+            // Está reproduciéndose → lo paramos y volvemos al logo
+            video.pause();
+            video.currentTime = 0;
+            contenedor.classList.remove("activo");
+            video.muted = false;
+            return;
+        }
+
+        // Está parado → reproducimos desde el principio
+        contenedor.classList.add("activo");
+        reproducirVideo();
     });
 }

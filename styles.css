@@ -2239,3 +2239,76 @@ body {
 .enlace-cartel.galeria-foto span {
     display: none;
 }
+
+/* ==========================================
+   LOGO DE PORTADA CON VÍDEO AL HOVER/TAP
+========================================== */
+
+.logo-portada-contenedor {
+    position: relative;
+    width: min(38vw, 360px);
+    min-width: 220px;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.25));
+}
+
+.logo-portada-contenedor .logo-portada,
+.logo-portada-contenedor .video-logo-portada {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 18px;
+    transition: opacity 0.35s ease;
+}
+
+.logo-portada-contenedor .logo-portada {
+    opacity: 1;
+    z-index: 1;
+    object-fit: contain;
+}
+
+.logo-portada-contenedor .video-logo-portada {
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Hover en escritorio */
+@media (hover: hover) and (pointer: fine) {
+    .logo-portada-contenedor:hover .logo-portada {
+        opacity: 0;
+    }
+
+    .logo-portada-contenedor:hover .video-logo-portada {
+        opacity: 1;
+    }
+}
+
+/* Estado activo (móvil/tablet tras el toque) */
+.logo-portada-contenedor.activo .logo-portada {
+    opacity: 0;
+}
+
+.logo-portada-contenedor.activo .video-logo-portada {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .logo-portada-contenedor {
+        width: 280px;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .logo-portada-contenedor {
+        width: 220px;
+        min-width: 0;
+    }
+}
